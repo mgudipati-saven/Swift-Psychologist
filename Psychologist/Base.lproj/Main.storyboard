@@ -33,7 +33,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="REU-M7-TBk" kind="showDetail" identifier="scared" id="Pka-pC-vJd"/>
+                                    <segue destination="TP8-Br-qXd" kind="showDetail" identifier="scared" id="Pka-pC-vJd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdq-xt-n7R">
@@ -43,7 +43,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="REU-M7-TBk" kind="showDetail" identifier="happy" id="dXU-cp-tVo"/>
+                                    <segue destination="TP8-Br-qXd" kind="showDetail" identifier="happy" id="dXU-cp-tVo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFo-5g-Fqf">
@@ -53,7 +53,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="REU-M7-TBk" kind="showDetail" identifier="sad" id="nq1-kP-BHB"/>
+                                    <segue destination="TP8-Br-qXd" kind="showDetail" identifier="sad" id="nq1-kP-BHB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,10 +89,46 @@
             </objects>
             <point key="canvasLocation" x="-353" y="54"/>
         </scene>
-        <!--Happiness View Controller-->
+        <!--Text View Controller-->
+        <scene sceneID="4w9-XE-Dgu">
+            <objects>
+                <viewController id="xIQ-Gb-dF1" customClass="TextViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NCn-zk-ktT"/>
+                        <viewControllerLayoutGuide type="bottom" id="IYT-Lk-O2K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DsI-5M-WjP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndq-hv-ZwW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ndq-hv-ZwW" firstAttribute="bottom" secondItem="IYT-Lk-O2K" secondAttribute="top" id="OEP-Kg-hRP"/>
+                            <constraint firstItem="ndq-hv-ZwW" firstAttribute="leading" secondItem="DsI-5M-WjP" secondAttribute="leading" id="TUm-nF-Yew"/>
+                            <constraint firstAttribute="trailing" secondItem="ndq-hv-ZwW" secondAttribute="trailing" id="Urj-Y7-kuy"/>
+                            <constraint firstItem="ndq-hv-ZwW" firstAttribute="top" secondItem="DsI-5M-WjP" secondAttribute="top" id="Y0Q-g1-0dl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="ndq-hv-ZwW" id="P1o-Rx-REp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJm-zd-FHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308" y="790"/>
+        </scene>
+        <!--Diagnosed Happiness View Controller-->
         <scene sceneID="Rs2-kk-1O5">
             <objects>
-                <viewController id="REU-M7-TBk" customClass="HappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="REU-M7-TBk" customClass="DiagnosedHappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qz4-tH-o3P"/>
                         <viewControllerLayoutGuide type="bottom" id="Gql-cz-TGe"/>
@@ -129,6 +165,15 @@
                             <constraint firstAttribute="trailing" secondItem="NsZ-WW-1Cu" secondAttribute="trailing" id="ltR-kO-Zgk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ghh-Fy-KGw">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="2xP-k8-XMI">
+                            <connections>
+                                <segue destination="xIQ-Gb-dF1" kind="popoverPresentation" identifier="Show Diagnostic History" popoverAnchorBarButtonItem="2xP-k8-XMI" id="XkN-Gm-63a">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="faceView" destination="NsZ-WW-1Cu" id="Upy-ZN-9Dc"/>
                     </connections>
@@ -140,7 +185,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1165" y="790"/>
+            <point key="canvasLocation" x="-353" y="790"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="xmz-aY-nPD">
@@ -148,7 +193,7 @@
                 <splitViewController id="1RX-iY-yER" sceneMemberID="viewController">
                     <connections>
                         <segue destination="fzG-wF-GhM" kind="relationship" relationship="masterViewController" id="fTH-Km-2R8"/>
-                        <segue destination="REU-M7-TBk" kind="relationship" relationship="detailViewController" id="QqI-Hm-02I"/>
+                        <segue destination="TP8-Br-qXd" kind="relationship" relationship="detailViewController" id="QqI-Hm-02I"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CtE-IB-hZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,8 +218,26 @@
             </objects>
             <point key="canvasLocation" x="-1165" y="54"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IDv-6m-Dwf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TP8-Br-qXd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k4l-l8-lbC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="REU-M7-TBk" kind="relationship" relationship="rootViewController" id="gLx-Fg-1ab"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCN-Cz-08J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1165" y="790"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pka-pC-vJd"/>
+        <segue reference="nq1-kP-BHB"/>
     </inferredMetricsTieBreakers>
 </document>
